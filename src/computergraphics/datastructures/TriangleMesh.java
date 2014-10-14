@@ -1,7 +1,7 @@
 package computergraphics.datastructures;
 
 // TODO ganze Klasse implementieren
-public class TriangleMeshImpl implements ITriangleMesh {
+public class TriangleMesh implements ITriangleMesh {
 
 	@Override
 	public void addTriangle(Triangle t) {
