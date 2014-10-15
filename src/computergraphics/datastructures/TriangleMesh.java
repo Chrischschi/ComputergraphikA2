@@ -37,8 +37,8 @@ public class TriangleMesh implements ITriangleMesh {
 	public int addVertex(Vertex v) {
 		vertexList.add(v);
 		
-		/* Da Vertices an das Ende der Liste angehängt werden, ist der Index 
-		 * des lezten Vertex der hinzugefügt wurde der letzte erreichbare Index
+		/* Da Vertices an das Ende der Liste angehÃ¤ngt werden, ist der Index 
+		 * des lezten Vertex der hinzugefÃ¼gt wurde der letzte erreichbare Index
 		 * der Liste. */
 		return vertexList.size() - 1;	
 	}
