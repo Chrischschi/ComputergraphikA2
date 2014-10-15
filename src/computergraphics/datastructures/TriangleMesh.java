@@ -1,7 +1,32 @@
+/**
+* Praktikum WPCG, Wintersemester 2014/2015
+* Gruppe: 
+* Andreas Mauritz (Andreas.Mauritz@haw-hamburg.de)
+* Christian Schirin (Christian.Schirin@haw-hamburg.de)
+* Aufgabe: Aufgabenblatt 2, Aufgabe 1
+* Verwendete Quellen: 
+* Phillip Jenke: Folien zu Vorlesung 2 - Polygonale Netze (S.6)
+* 
+*/
 package computergraphics.datastructures;
 
-// TODO ganze Klasse implementieren
+import java.util.List;
+
+/** Diese Klasse repräsentiert ein Polygonales Netz in dem die Polygone alle
+ * Dreiecke sind. Es wird bei dieser Implementierung auf Wert der verständlich-
+ * keit der Implementation statt Effizienz Wert gelegt.
+ * @author Andreas Mauritz, Christian Schirin 
+ */
 public class TriangleMesh implements ITriangleMesh {
+	
+	//Ein Polygonales Netz ist definiert durch eine... 
+	
+	//Knotenliste V...
+	List<Vertex> vertexList; 
+	
+	//und eine Facettenliste F. 
+	List<Triangle> facetList; //Unsere Facetten sind alle dreieckig
+	
 
 	@Override
 	public void addTriangle(Triangle t) {
