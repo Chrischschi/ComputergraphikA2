@@ -10,6 +10,7 @@
 */
 package computergraphics.datastructures;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /** Diese Klasse repräsentiert ein Polygonales Netz in dem die Polygone alle
@@ -26,7 +27,12 @@ public class TriangleMesh implements ITriangleMesh {
 	
 	//und eine Facettenliste F. 
 	List<Triangle> facetList; //Unsere Facetten sind alle dreieckig
-	
+
+	/** Initializer. */ 
+	{ 
+		vertexList = new ArrayList<>();
+		facetList = new ArrayList<>();
+	}
 
 	@Override
 	public void addTriangle(Triangle t) {
@@ -73,6 +79,27 @@ public class TriangleMesh implements ITriangleMesh {
 	public void clear() {
 		vertexList.clear();
 		facetList.clear();
+	}
+	
+	// Methods for Testing: equals and toString
+	
+	/**
+	 * Use this to check if this triangle mesh is equal to 
+	 * another triangle mesh.
+	 */
+	@Override
+	public boolean equals(Object o) {
+		return false;
+	}
+	
+	
+	/** 
+	 * Returns a string representation of the Triangle Mesh, 
+	 * useful for debugging and testing. 
+	 */
+	@Override 
+	public String toString() {
+		return null;
 	}
 
 }
