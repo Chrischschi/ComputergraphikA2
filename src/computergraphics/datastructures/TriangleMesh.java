@@ -64,10 +64,16 @@ public class TriangleMesh implements ITriangleMesh {
 		return null;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * Calling this method has the same behaviour as this code block:
+	 * { V.clear(); F.clear(); }
+	 * where V is the vertex list and F is the facet list of the Triangle Mesh.
+	 */
 	@Override
 	public void clear() {
-		// TODO Auto-generated method stub
-
+		vertexList.clear();
+		facetList.clear();
 	}
 
 }
