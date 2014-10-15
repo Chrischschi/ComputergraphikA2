@@ -6,6 +6,8 @@
 
 package computergraphics.math;
 
+import computergraphics.datastructures.Triangle;
+
 /**
  * Contains various helper classes.
  * 
@@ -74,5 +76,10 @@ public final class MathHelpers {
         }
         return factorial;
     }
+
+	public static Vector3 facetNormal(Triangle t) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

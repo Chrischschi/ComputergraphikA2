@@ -13,6 +13,9 @@ package computergraphics.datastructures;
 import java.util.ArrayList;
 import java.util.List;
 
+import computergraphics.math.MathHelpers;
+import computergraphics.math.Vector3;
+
 /** Diese Klasse repräsentiert ein Polygonales Netz in dem die Polygone alle
  * Dreiecke sind. Es wird bei dieser Implementierung auf Wert der verständlich-
  * keit der Implementation statt Effizienz Wert gelegt.
@@ -80,6 +83,17 @@ public class TriangleMesh implements ITriangleMesh {
 		vertexList.clear();
 		facetList.clear();
 	}
+	
+	public void calculateAllNormals() {
+		// TODO Hilfsmethode implementieren, Rest von Aufgabe 2 implementieren, UnitTest schreiben.
+		for (Triangle t : facetList){
+			Vector3 facetNormal = MathHelpers.facetNormal(t);
+			t.setNormal(facetNormal);
+		}
+		
+	}
+	
+	
 	
 	// Methods for Testing: equals and toString
 	
