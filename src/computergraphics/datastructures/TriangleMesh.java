@@ -30,38 +30,37 @@ public class TriangleMesh implements ITriangleMesh {
 
 	@Override
 	public void addTriangle(Triangle t) {
-		// TODO Auto-generated method stub
-
+		facetList.add(t);
 	}
 
 	@Override
 	public int addVertex(Vertex v) {
-		// TODO Auto-generated method stub
-		return 0;
+		vertexList.add(v);
+		
+		/* Da Vertices an das Ende der Liste angehängt werden, ist der Index 
+		 * des lezten Vertex der hinzugefügt wurde der letzte erreichbare Index
+		 * der Liste. */
+		return vertexList.size() - 1;	
 	}
 
 	@Override
 	public int getNumberOfTriangles() {
-		// TODO Auto-generated method stub
-		return 0;
+		return facetList.size();
 	}
 
 	@Override
 	public int getNumberOfVertices() {
-		// TODO Auto-generated method stub
-		return 0;
+		return vertexList.size();
 	}
 
 	@Override
 	public Triangle getTriangle(int index) {
-		// TODO Auto-generated method stub
-		return null;
+		return facetList.get(index);
 	}
 
 	@Override
 	public Vertex getVertex(int index) {
-		// TODO Auto-generated method stub
-		return null;
+		return vertexList.get(index);
 	}
 
 	/**
