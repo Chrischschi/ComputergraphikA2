@@ -23,10 +23,10 @@ public class TriangleMesh implements ITriangleMesh {
 	//Ein Polygonales Netz ist definiert durch eine... 
 	
 	//Knotenliste V...
-	List<Vertex> vertexList; 
+	private List<Vertex> vertexList; 
 	
 	//und eine Facettenliste F. 
-	List<Triangle> facetList; //Unsere Facetten sind alle dreieckig
+	private List<Triangle> facetList; //Unsere Facetten sind alle dreieckig
 
 	/** Initializer. */ 
 	{ 
@@ -89,7 +89,16 @@ public class TriangleMesh implements ITriangleMesh {
 	 */
 	@Override
 	public boolean equals(Object o) {
-		return false;
+		//check for reference equality
+		if (this == o) {return true;};
+		//check if null or different type
+		if (!(o instanceof TriangleMesh)) {return false;};
+		//Safe cast now possible
+		TriangleMesh that = (TriangleMesh)o;
+		
+		//two meshes are equal if their vertex lists and facet lists are equal.
+		return this.vertexList.equals(that.vertexList) && 
+			   this.facetList.equals(that.facetList);
 	}
 	
 	
@@ -99,7 +108,7 @@ public class TriangleMesh implements ITriangleMesh {
 	 */
 	@Override 
 	public String toString() {
-		return null;
+		return "TODO";
 	}
 
 }

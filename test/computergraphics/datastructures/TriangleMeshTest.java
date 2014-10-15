@@ -5,10 +5,16 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import computergraphics.math.Vector3;
+
 public class TriangleMeshTest {
+	private TriangleMesh mesh1;
+	private TriangleMesh mesh2;
 
 	@Before
 	public void setUp() throws Exception {
+		mesh1 = new TriangleMesh();
+		mesh2 = new TriangleMesh();
 	}
 
 	@Test
@@ -47,11 +53,28 @@ public class TriangleMeshTest {
 	}
 
 	@Test
-	public void testEqualsObject() {
+	public void testEqualsObject1() {
 		// Zwei Leere Dreiecksnetze sind gleich. 
-		TriangleMesh mesh1 = new TriangleMesh();
-		TriangleMesh mesh2 = new TriangleMesh();
 		assertEquals("Zwei leere Dreiecksnetze sind gleich",mesh1,mesh2);
+	}
+	
+	@Test
+	public void testEqualsObject2() {
+		/* Zwei anfänglich leere Dreiecksnetze, zu welchen der gleiche Vertex
+		 * hinzufügt wurde sind auch gleich. 
+		 */
+		Vertex v1 = new Vertex(new Vector3());
+		mesh1.addVertex(v1);
+		mesh2.addVertex(v1);
+		assertEquals(mesh1,mesh2);
+	}
+	
+	@Test
+	public void testEqualsObject3() {
+		/* Zwei anfänglich leere Dreiecksnetze, zu welchen das gleiche Dreieck 
+		 * hinzugefügt wurde sind ebenfalls gleich. TODO test schreiben
+		 */
+		fail("TODO mit dreiecken testen");
 	}
 
 	@Test
