@@ -78,10 +78,26 @@ public class TriangleMeshTest {
 	}
 
 	@Test
-	public void testToString() {
+	public void testToString1() {
 		TriangleMesh mesh = new TriangleMesh();
 		String meshAsString = "TriangleMesh(vertexList=[],facetList=[])";
 		assertEquals(meshAsString,mesh.toString());
+	}
+	
+	@Test
+	public void testToString2() {
+		TriangleMesh mesh = new TriangleMesh(); 
+		String expected = "TriangleMesh("
+				+ "vertexList=["
+				+ "Vertex(position=(0,0,0),normal=(1,0,0),color=(0,0,0))"
+				+ "],"
+				+ "facetList=[]"
+				+ ")";
+		Vertex v = new Vertex(new Vector3());
+		
+		mesh.addVertex(v);
+		
+		assertEquals(expected,mesh.toString());
 	}
 
 }
