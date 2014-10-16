@@ -101,4 +101,17 @@ public class Vertex {
 	public void setColor(Vector3 color) {
 		this.color.copy(color);
 	}
+	
+	//CUSTOM CODE
+	
+	/**
+	 * toString Method for debugging/testing/tracing.
+	 */
+	public String toString() {
+	    return "Vertex("
+	    	+ "position="+position+","
+	        + "normal="+normal+","
+	        + "color="+color
+	        +")";
+	}
 }

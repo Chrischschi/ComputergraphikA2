@@ -124,7 +124,8 @@ public class TriangleMesh implements ITriangleMesh {
 	public String toString() {
 		return "TriangleMesh("
 				+ "vertexList="+vertexList+","
-				+ "facetList="+facetList+")";
+				+ "facetList="+facetList
+				+ ")";
 	}
 
 }
