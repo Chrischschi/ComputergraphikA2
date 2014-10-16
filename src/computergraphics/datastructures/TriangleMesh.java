@@ -122,7 +122,9 @@ public class TriangleMesh implements ITriangleMesh {
 	 */
 	@Override 
 	public String toString() {
-		return "TODO";
+		return "TriangleMesh("
+				+ "vertexList="+vertexList+","
+				+ "facetList="+facetList+")";
 	}
 
 }
