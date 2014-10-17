@@ -210,7 +210,24 @@ public class Vector3 {
         values[MathHelpers.INDEX_2] /= norm;
     }
     
+<<<<<<< HEAD
     public String toString(){
     	return Arrays.toString(values);
     }
+=======
+    //CUSTOM CODE 
+    
+    /** 
+     * A special toString method. For reasons of readability, The string 
+     * representation should be defined as (x,y,z) instead of 
+     * Vector3(x=?,y=?,z=?). 
+     * @return the String representation of this vector
+     */
+     @Override
+     public String toString() {
+         /*TODO entscheiden, was für eine präzision bei der darstellung 
+          * sinnvoll ist / ob der %.(N?)f oder %d formatter sinvoller ist. */
+         return String.format("(%.0f,%.0f,%.0f)",get(0),get(1),get(2));
+     }
+>>>>>>> 53e1014a45f82207cf156cb80c3987955cb3a4a9
 }

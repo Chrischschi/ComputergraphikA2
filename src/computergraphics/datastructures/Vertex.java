@@ -102,7 +102,21 @@ public class Vertex {
 		this.color.copy(color);
 	}
 	
+<<<<<<< HEAD
 	public String toString(){
 		return position.toString();
+=======
+	//CUSTOM CODE
+	
+	/**
+	 * toString Method for debugging/testing/tracing.
+	 */
+	public String toString() {
+	    return "Vertex("
+	    	+ "position="+position+","
+	        + "normal="+normal+","
+	        + "color="+color
+	        +")";
+>>>>>>> 53e1014a45f82207cf156cb80c3987955cb3a4a9
 	}
 }
