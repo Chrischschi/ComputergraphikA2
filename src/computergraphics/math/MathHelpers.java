@@ -6,9 +6,6 @@
 
 package computergraphics.math;
 
-import computergraphics.datastructures.Triangle;
-import computergraphics.datastructures.TriangleMesh;
-
 
 /**
  * Contains various helper classes.

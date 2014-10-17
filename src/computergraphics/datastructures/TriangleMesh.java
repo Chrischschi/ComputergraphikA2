@@ -96,9 +96,9 @@ public class TriangleMesh implements ITriangleMesh {
 			Vector3 posC = getVertex(t.getC()).getPosition();
 			
 			Vector3 normal = MathHelpers.calculateNormal(posA,posB,posC);
-			
-			//Normalenvector dem Dreieck hinzufügen
-			t.setNormal(normal);			
+
+			//normierter Normalenvector dem Dreieck hinzufügen
+			t.setNormal(normal.getNormalized());			
 		}
 	}
 	
@@ -157,7 +157,7 @@ public class TriangleMesh implements ITriangleMesh {
 		
 		mesh1.calculateAllNormals();
 		
-		System.out.println("normal: " + tri.getNormal().toString());
+		System.out.println("normal: " + tri.getNormal().toString() );
 	}
 
 }
