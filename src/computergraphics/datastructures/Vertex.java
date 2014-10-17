@@ -101,4 +101,8 @@ public class Vertex {
 	public void setColor(Vector3 color) {
 		this.color.copy(color);
 	}
+	
+	public String toString(){
+		return position.toString();
+	}
 }

@@ -5,6 +5,8 @@
  */
 package computergraphics.math;
 
+import java.util.Arrays;
+
 /**
  * 
  * @author Philipp Jenke
@@ -206,5 +208,9 @@ public class Vector3 {
         values[MathHelpers.INDEX_0] /= norm;
         values[MathHelpers.INDEX_1] /= norm;
         values[MathHelpers.INDEX_2] /= norm;
+    }
+    
+    public String toString(){
+    	return Arrays.toString(values);
     }
 }

@@ -5,6 +5,8 @@
  */
 package computergraphics.datastructures;
 
+import java.util.Arrays;
+
 import computergraphics.math.Vector3;
 
 /**
@@ -145,5 +147,9 @@ public class Triangle {
 	 */
 	public int getTextureCoordinate(int vIndex) {
 		return texCoordIndices[vIndex];
+	}
+	
+	public String toString(){
+		return Arrays.toString(vertexIndices);
 	}
 }
