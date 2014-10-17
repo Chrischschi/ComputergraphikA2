@@ -87,60 +87,23 @@ public class TriangleMesh implements ITriangleMesh {
 	//Aufgabe 2: Dreiecksnormalen ausrechnen und speichern
 	public void calculateAllNormals() {
 		
+		//Normale für jedes Dreieck aus facetList setzen
 		for (Triangle t : facetList){
-			
-			//alle einzelnen Werte des ersten Vectors des Dreiecks
-			double vectorA_index0 = 
-					vertexList.get(t.getA()).getPosition().get(0);
-			double vectorA_index1 = 
-					vertexList.get(t.getA()).getPosition().get(1);
-			double vectorA_index2 = 
-					vertexList.get(t.getA()).getPosition().get(2);
-			
-			//alle einzelnen Werte des zweiten Vectors des Dreiecks
-			double vectorB_index0 = 
-					vertexList.get(t.getB()).getPosition().get(0);
-			double vectorB_index1 = 
-					vertexList.get(t.getB()).getPosition().get(1);
-			double vectorB_index2 = 
-					vertexList.get(t.getB()).getPosition().get(2);
-			
-			
-			//alle einzelnen Werte des dritten Vectors des Dreiecks
-			double vectorC_index0 = 
-					vertexList.get(t.getC()).getPosition().get(0);
-			double vectorC_index1 = 
-					vertexList.get(t.getC()).getPosition().get(1);
-			double vectorC_index2 = 
-					vertexList.get(t.getC()).getPosition().get(2);
-			
-			
+					
 			//Vector B minus Vector A
-			Vector3 bMinusA = new Vector3(vectorB_index0 - vectorA_index0,
-										  vectorB_index1 - vectorA_index1,
-										  vectorB_index2 - vectorA_index2);
-			
+			Vector3 bMinusA = vertexList.get(t.getB()).getPosition().
+					subtract(vertexList.get(t.getA()).getPosition());
+					
 			//Vector C minus Vector A
-			Vector3 cMinusA = new Vector3(vectorC_index0 - vectorA_index0,
-					  					  vectorC_index1 - vectorA_index1,
-					  					  vectorC_index2 - vectorA_index2);
-			
+			Vector3 cMinusA = vertexList.get(t.getC()).getPosition().
+					subtract(vertexList.get(t.getA()).getPosition());
 
 			//Kreuzprodukt bMinusA X cMinusA
-			double kreuzIndex1 = bMinusA.get(1) * cMinusA.get(2) - bMinusA.get(2) * cMinusA.get(1);
+			Vector3 crossProduct = bMinusA.cross(cMinusA);
 			
-			double kreuzIndex2 = bMinusA.get(2) * cMinusA.get(0) - bMinusA.get(0) * cMinusA.get(2);
-			
-			double kreuzIndex3 = bMinusA.get(0) * cMinusA.get(1) - bMinusA.get(1) * cMinusA.get(0);
-			
-			
-			//Normalenvector zusammensetzen
-			Vector3 facetNormal = new Vector3(kreuzIndex1, kreuzIndex2, kreuzIndex3);
-
 			//Normalenvector dem Dreieck hinzufügen
-			t.setNormal(facetNormal);			
+			t.setNormal(crossProduct);			
 		}
-		
 	}
 	
 	
@@ -198,7 +161,7 @@ public class TriangleMesh implements ITriangleMesh {
 		
 		mesh1.calculateAllNormals();
 		
-		System.out.println("normal: " + tri.getNormal().toString());		
+		System.out.println("normal: " + tri.getNormal().toString());
 	}
 
 }
