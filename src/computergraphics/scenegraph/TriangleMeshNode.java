@@ -20,8 +20,12 @@ public class TriangleMeshNode extends Node {
 
     @Override
     public void drawGl(GL2 gl) {
-        int numberOfVertices = triangleMesh.getNumberOfVertices();
+        //We need to iterate over all the Triangles
         int numberOfTriangles = triangleMesh.getNumberOfTriangles();
+        
+        //initialize drawing
+        gl.glColor3d(1, 0, 0); //red
+        gl.glBegin(GL.GL_TRIANGLES);
         
         //Draw every Triangle
         for(int indexTriangle = 0;
@@ -40,8 +44,6 @@ public class TriangleMeshNode extends Node {
             Vector3 positionC = vertexC.getPosition();
             
             //Draw the Vertices based on the positions
-            gl.glColor3d(1, 0, 0);
-            gl.glBegin(GL.GL_TRIANGLES);
             
             //Draw vertex A
             gl.glVertex3d(positionA.get(0),positionA.get(1),positionA.get(2));
@@ -50,9 +52,9 @@ public class TriangleMeshNode extends Node {
             //Draw vertex C 
             gl.glVertex3d(positionC.get(0),positionC.get(1),positionC.get(2));
             
-            gl.glEnd();
+            
         }
-
+        gl.glEnd(); //end drawing
     }
 
 }
