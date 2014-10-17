@@ -13,6 +13,7 @@ package computergraphics.datastructures;
 import java.util.ArrayList;
 import java.util.List;
 
+import computergraphics.math.MathHelpers;
 import computergraphics.math.Vector3;
 
 /** Diese Klasse repräsentiert ein Polygonales Netz in dem die Polygone alle
@@ -89,20 +90,15 @@ public class TriangleMesh implements ITriangleMesh {
 		
 		//Normale für jedes Dreieck aus facetList setzen
 		for (Triangle t : facetList){
-					
-			//Vector B minus Vector A
-			Vector3 bMinusA = vertexList.get(t.getB()).getPosition().
-					subtract(vertexList.get(t.getA()).getPosition());
-					
-			//Vector C minus Vector A
-			Vector3 cMinusA = vertexList.get(t.getC()).getPosition().
-					subtract(vertexList.get(t.getA()).getPosition());
-
-			//Kreuzprodukt bMinusA X cMinusA
-			Vector3 crossProduct = bMinusA.cross(cMinusA);
+			
+			Vector3 posA = getVertex(t.getA()).getPosition();
+			Vector3 posB = getVertex(t.getB()).getPosition();
+			Vector3 posC = getVertex(t.getC()).getPosition();
+			
+			Vector3 normal = MathHelpers.calculateNormal(posA,posB,posC);
 			
 			//Normalenvector dem Dreieck hinzufügen
-			t.setNormal(crossProduct);			
+			t.setNormal(normal);			
 		}
 	}
 	

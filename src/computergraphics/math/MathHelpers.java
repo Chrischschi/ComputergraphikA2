@@ -6,6 +6,9 @@
 
 package computergraphics.math;
 
+import computergraphics.datastructures.Triangle;
+import computergraphics.datastructures.TriangleMesh;
+
 
 /**
  * Contains various helper classes.
@@ -75,5 +78,28 @@ public final class MathHelpers {
         }
         return factorial;
     }
+
+    /**
+     * Berechnet eine Facettennormale für ein Dreieck welches durch 3 Ortsvek-
+     * toren gegeben ist.
+     * @param a erster Vektor
+     * @param b zweiter Vektor
+     * @param c dritter Vektor
+     * @return die berechnete Normale
+     */
+	public static Vector3 calculateNormal(Vector3 a, Vector3 b, Vector3 c) {
+		
+		//Vector B minus Vector A
+		Vector3 bMinusA = b.subtract(a);
+				
+		//Vector C minus Vector A
+		Vector3 cMinusA = c.subtract(a);
+
+		//Kreuzprodukt bMinusA X cMinusA
+		Vector3 crossProduct = bMinusA.cross(cMinusA);
+		return crossProduct;
+	}
+    
+    
 
 }
